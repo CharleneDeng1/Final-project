@@ -156,8 +156,8 @@ DecisionTree_prune <- prune(DecisionTree,cp= DecisionTree$cptable
 plot(DecisionTree_prune, uniform=TRUE, main="Decision Tree after prune")
 text(DecisionTree_prune, use.n=TRUE, all=TRUE, cex=.5)
 asRules(DecisionTree_prune)
-# set.seed(99)
-# rpart.plot(DecisionTree_prune)
+#set.seed(99)
+#rpart.plot(DecisionTree_prune)
 predicted_DT <- predict(DecisionTree_prune,ABT_test)
 postResample(pred = predicted_DT, obs = ABT_train$OutPut)
 
@@ -334,13 +334,13 @@ head(NN_model$generalized.weights[[1]])
 plot(NN_model)
 
 
-# matrix.train2 <- model.matrix(~ X1stBaseDepression+X1stBondBaseForce+X1stBondUSGCurrent
-#   +X1stContactDepression+X1stContactLevel+X1stContactZDAC
-#   +X1stSearchHeight+X1stSearchPosition+X1stSearchSpeed
-#   +X2ndBaseDepression+X2ndContactDepression
-#   +X2ndContactLevel+X2ndContactZDAC+X2ndSearchHeight+X2ndSearchPosition
-#   +EFOCurrent+EFOTime+FireLevel+LoopBaseDistance+LoopTopDistance
-#   +LoopWireFeed+Moveto1stSearchHeight,data=ABT_train)
+#matrix.train2 <- model.matrix(~ X1stBaseDepression+X1stBondBaseForce+X1stBondUSGCurrent
+#+X1stContactDepression+X1stContactLevel+X1stContactZDAC
+#+X1stSearchHeight+X1stSearchPosition+X1stSearchSpeed
+#+X2ndBaseDepression+X2ndContactDepression
+#+X2ndContactLevel+X2ndContactZDAC+X2ndSearchHeight+X2ndSearchPosition
+#+EFOCurrent+EFOTime+FireLevel+LoopBaseDistance+LoopTopDistance
+#+LoopWireFeed+Moveto1stSearchHeight,data=ABT_train)
 
 
 predict_testNN = compute(NN_model, ABT_train[,3:24])
